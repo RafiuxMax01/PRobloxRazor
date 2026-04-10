@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Usuarios.Modelos
 {
+    // Esta clase representa el Modelo y la tabla en la base de datos
     public class Desarrollador
     {
         [Key]
@@ -13,8 +14,6 @@ namespace Usuarios.Modelos
         public string? Rol { get; set; }
         public string? JuegoAsignado { get; set; }
         public int RobuxGenerados { get; set; }
-
-        // ESTE ES EL CAMPO QUE FALTA O ESTÁ MAL ESCRITO
         public string? Estatus { get; set; }
     }
 }

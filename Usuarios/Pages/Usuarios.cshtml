@@ -4,14 +4,14 @@
 
 <h1>Gestión de P-Studios</h1>
 
-<form method="post">
-    <input type="hidden" name="NuevoDesarrollador.Id" value="@Model.NuevoDesarrollador?.Id" />
+<form method="post" class="mb-4">
+    <input type="hidden" asp-for="NuevoDesarrollador.Id" />
 
-    <input type="text" name="NuevoDesarrollador.Username" placeholder="Usuario Roblox" value="@Model.NuevoDesarrollador?.Username" required /><br />
-    <input type="text" name="NuevoDesarrollador.Rol" placeholder="Rol" value="@Model.NuevoDesarrollador?.Rol" required /><br />
-    <input type="text" name="NuevoDesarrollador.JuegoAsignado" placeholder="Juego Asignado" value="@Model.NuevoDesarrollador?.JuegoAsignado" required /><br />
-    <input type="number" name="NuevoDesarrollador.RobuxGenerados" placeholder="Robux Generados" value="@Model.NuevoDesarrollador?.RobuxGenerados" required /><br />
-    <input type="text" name="NuevoDesarrollador.Estatus" placeholder="Estatus" value="@Model.NuevoDesarrollador?.Estatus" required /><br />
+    <input type="text" asp-for="NuevoDesarrollador.Username" placeholder="Usuario Roblox" required /><br />
+    <input type="text" asp-for="NuevoDesarrollador.Rol" placeholder="Rol" required /><br />
+    <input type="text" asp-for="NuevoDesarrollador.JuegoAsignado" placeholder="Juego Asignado" required /><br />
+    <input type="number" asp-for="NuevoDesarrollador.RobuxGenerados" placeholder="Robux Generados" required /><br />
+    <input type="text" asp-for="NuevoDesarrollador.Estatus" placeholder="Estatus" required /><br />
 
     <button type="submit" class="btn btn-primary">Guardar</button>
 
@@ -48,7 +48,7 @@
                 <td>@dev.RobuxGenerados</td>
                 <td>@dev.Estatus</td>
                 <td>
-                    <a href="/Usuarios?editarId=@dev.Id">Editar</a>
+                    <a href="/Usuarios?editarId=@dev.Id" class="btn btn-primary btn-sm">Editar</a>
                 </td>
             </tr>
         }
