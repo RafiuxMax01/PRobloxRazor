@@ -1,0 +1,56 @@
+﻿@page
+@using Usuarios.Modelos
+@model Usuarios.Pages.UsuariosModel
+
+<h1>Gestión de P-Studios</h1>
+
+<form method="post">
+    <input type="hidden" name="NuevoDesarrollador.Id" value="@Model.NuevoDesarrollador?.Id" />
+
+    <input type="text" name="NuevoDesarrollador.Username" placeholder="Usuario Roblox" value="@Model.NuevoDesarrollador?.Username" required /><br />
+    <input type="text" name="NuevoDesarrollador.Rol" placeholder="Rol" value="@Model.NuevoDesarrollador?.Rol" required /><br />
+    <input type="text" name="NuevoDesarrollador.JuegoAsignado" placeholder="Juego Asignado" value="@Model.NuevoDesarrollador?.JuegoAsignado" required /><br />
+    <input type="number" name="NuevoDesarrollador.RobuxGenerados" placeholder="Robux Generados" value="@Model.NuevoDesarrollador?.RobuxGenerados" required /><br />
+    <input type="text" name="NuevoDesarrollador.Estatus" placeholder="Estatus" value="@Model.NuevoDesarrollador?.Estatus" required /><br />
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+    @if (Model.NuevoDesarrollador?.Id > 0)
+    {
+        <button type="submit" asp-page-handler="Eliminar" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar a este desarrollador de P-Studios?');">
+            Eliminar
+        </button>
+    }
+
+    <a href="/Usuarios" class="btn btn-secondary">Limpiar</a>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Rol</th>
+            <th>Juego</th>
+            <th>Robux</th>
+            <th>Estatus</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Desarrollador dev in Model.Desarrolladores)
+        {
+            <tr>
+                <td>@dev.Id</td>
+                <td>@dev.Username</td>
+                <td>@dev.Rol</td>
+                <td>@dev.JuegoAsignado</td>
+                <td>@dev.RobuxGenerados</td>
+                <td>@dev.Estatus</td>
+                <td>
+                    <a href="/Usuarios?editarId=@dev.Id">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

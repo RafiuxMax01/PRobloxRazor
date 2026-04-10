@@ -1,0 +1,61 @@
+/* =========================================
+   ESTILOS PREMIUM P-STUDIOS (TARJETAS)
+   ========================================= */
+
+/* --- Contenedor de Tarjetas --- */
+.card {
+    background-color: #2D2F31;
+    border: 1px solid #3E3E42;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+    /* --- Efecto "Hover" (Al pasar el mouse) --- */
+    .card:hover {
+        transform: translateY(-8px); /* La tarjeta flota hacia arriba */
+        box-shadow: 0 12px 20px rgba(0, 162, 255, 0.15); /* Sombra azul brillante */
+        border-color: #00A2FF; /* Borde azul de Roblox */
+    }
+
+.card-body {
+    color: #B8B8B8; /* Texto descriptivo en gris claro */
+}
+
+.card-title {
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+/* --- Etiquetas (Badges) personalizadas --- */
+.badge-estado {
+    background-color: #00A2FF; /* Azul para estado del juego */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.badge-precio {
+    background-color: #00B06F; /* Verde estilo Robux */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+/* --- Títulos de página con diseño --- */
+.page-header {
+    border-bottom: 2px solid #3E3E42;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+    .page-header h1 {
+        color: #00A2FF;
+        text-shadow: 0 0 10px rgba(0, 162, 255, 0.3);
+    }
